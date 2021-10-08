@@ -1,0 +1,2 @@
+columnIndex= head -1 ${CSV_FILE} | tr ';' '\n' | nl |grep -w ${COLUMN_NAME} | tr -d " " | awk -F " " '{print $1}'
+awk -F "\"*;\"*" "{print ${columnIndex}}" $CSV_FILE | parallel -j ${NR_THREAD} --progress wget -q {} -P ${OUTPUT_FOLDER}

@@ -8,7 +8,7 @@ result="result"
 
 file="labelled_newscatcher_dataset.csv"
 
-while getopts ":c:w:r:f:" opt; do
+while getopts ":n:w:o:d:" opt; do
   case $opt in
     n) column="$OPTARG"
     ;;
